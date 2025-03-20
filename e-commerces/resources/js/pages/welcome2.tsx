@@ -27,7 +27,6 @@ export default function Welcome2() {
                                 defaultValue="admin@argon.com"
                             />
                             {errors.email?.message && <p className="text-red-500 text-xs pt-1">{errors.email.message}</p>}
-
                         </div>
                         <div className="mb-3">
                             <input

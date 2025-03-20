@@ -15,7 +15,7 @@ class UserController extends Controller
             ->get()
             ->toArray();
         dd($users);
-        return;
+        // return Inertia::render('users/show');
    }
 
    public function store(){
