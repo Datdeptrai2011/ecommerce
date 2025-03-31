@@ -10,6 +10,31 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+<<<<<<< HEAD
+=======
+    // public function welcome2(Request $request){
+    //     $request->validate([
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|email|unique:users,email',
+    //         'password' => 'required|min:6|confirmed',
+    //         'phone' => 'required',
+    //         'address' => 'nullable|string',
+    //         'avata' => 'nullable|string',
+    //         'citizen_identification' => 'nullable|string'
+    //     ]);
+    //     $user = User::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password),
+    //         'phone' => $request->phone,
+    //         'address' => $request->address ?? 'Not provided',
+    //         'avata' => $request->avata ?? '',
+    //         'citizen_identification' => $request->citizen_identification ?? '',
+    //     ]);
+
+    //     return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
+    // }
+>>>>>>> c70c8bdd5bd91e0ae0ed0c0d2211000c78b634f6
     public function welcome2(Request $request){
         try {
             $request->validate([

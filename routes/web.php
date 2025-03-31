@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
+<<<<<<< HEAD
 use App\Http\Controllers\CartController;
+=======
+>>>>>>> c70c8bdd5bd91e0ae0ed0c0d2211000c78b634f6
 use Inertia\Inertia;
 
 Route::get('/welcome', function () {
@@ -32,6 +35,7 @@ Route::get('/login3', function () {
 Route::get('/homepage', function () {
     return Inertia::render('homepage');
 })->name('home');
+<<<<<<< HEAD
 Route::get('/product', function () {
     return Inertia::render('product');
 })->name('home');
@@ -51,6 +55,9 @@ Route::get('/add1',function(){
     return Inertia::render('add1');
 })->name('home');
 Route::get('/','CartController@index');
+=======
+
+>>>>>>> c70c8bdd5bd91e0ae0ed0c0d2211000c78b634f6
 Route::get('index',function(){
     echo'hello';
 

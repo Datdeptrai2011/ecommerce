@@ -77,6 +77,7 @@ export default function homepage() {
                         Tất cả
                     </button>
                     <button className="px-4 py-2 text-sm font-medium text-gray-700 border-b-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition" onClick={() => filterCategory('vot')}>
+<<<<<<< HEAD
                         <Link href="/product">Vợt Cầu Lông</Link>
                     </button>
                     <button className="px-4 py-2 text-sm font-medium text-gray-700 border-b-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition" onClick={() => filterCategory('giay')}>
@@ -90,6 +91,21 @@ export default function homepage() {
                     </button>
                     <button className="px-4 py-2 text-sm font-medium text-gray-700 border-b-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition" onClick={() => filterCategory('quan')}>
                         <Link href="/product">Phụ Kiện Cầu Lông</Link>
+=======
+                        Vợt Cầu Lông
+                    </button>
+                    <button className="px-4 py-2 text-sm font-medium text-gray-700 border-b-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition" onClick={() => filterCategory('giay')}>
+                        Giày Cầu Lông
+                    </button>
+                    <button className="px-4 py-2 text-sm font-medium text-gray-700 border-b-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition" onClick={() => filterCategory('ao')}>
+                        Áo Cầu Lông
+                    </button>
+                    <button className="px-4 py-2 text-sm font-medium text-gray-700 border-b-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition" onClick={() => filterCategory('vay')}>
+                        Váy Cầu Lông
+                    </button>
+                    <button className="px-4 py-2 text-sm font-medium text-gray-700 border-b-2 border-transparent hover:border-blue-500 focus:border-blue-500 transition" onClick={() => filterCategory('quan')}>
+                        Quần Cầu Lông
+>>>>>>> c70c8bdd5bd91e0ae0ed0c0d2211000c78b634f6
                     </button>
                 </div>
 
