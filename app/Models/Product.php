@@ -12,13 +12,11 @@ class Product extends Model
 
     protected $fillable = [
         'name',
-<<<<<<< HEAD
         'category_id',
         'price',
-        'img'
-=======
-        'category_id'
->>>>>>> c70c8bdd5bd91e0ae0ed0c0d2211000c78b634f6
+        'image',
+       
+
     ];
 
     protected function casts(): array

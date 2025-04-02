@@ -13,9 +13,9 @@ class ProductItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'variant' =>fake()->word(),
-            'media_id' =>Media::factory(),
-            'product_id'=>Product::factory(),
+            'variant' => $faker->word,
+        'media_id' => $faker->numberBetween(1, 10),
+        'product_id' => Product::inRandomOrder()->first()->id,
         ];
     }
 }

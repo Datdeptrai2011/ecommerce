@@ -6,13 +6,13 @@ import { type SharedData } from '@/types';
 interface ProductForm {
     name: string;
     price: number;
-    img: string;
+    img: FileList;
 }
 export default function Management() {
-    const filterCategory = (category: string) => {
-        console.log(`Lọc danh mục: ${category}`);
-        // Viết logic để lọc sản phẩm theo danh mục
-    };
+    // const filterCategory = (category: string) => {
+    //     console.log(`Lọc danh mục: ${category}`);
+
+    // };
 
     const { register, handleSubmit, formState: { errors } } = useForm<ProductForm>();
     const [products, setProducts] = useState([
@@ -21,16 +21,29 @@ export default function Management() {
         { id: 3, name: 'Sản phẩm 3', price: 200, img: '/product3.jpg' },
     ]);
 
-    const onSubmit = (data: ProductForm) => {
-        const newProduct = {
-            id: products.length + 1,
-            name: data.name,
-            price: data.price,
-            img: data.img,
-        };
-        setProducts([...products, newProduct]); // Thêm sản phẩm mới vào danh sách
-    };
+    const onSubmit = async (data: ProductForm) => {
+        console.log('Submitting:', data);
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("price", data.price.toString());
+        if (data.img.length > 0) {
+            formData.append("img", data.img[0]);
+        } else {
+            alert("Vui lòng tải lên hình ảnh!");
+            return;
+        }
+            const response = await fetch("/api/product", {
+                method: "POST",
+                body: formData,
+            });
 
+            console.log('Response:', response);
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('Error response:', errorText);
+                throw new Error("Lỗi khi thêm sản phẩm!");
+            }
+    };
 
     return (
         <>
@@ -58,7 +71,7 @@ export default function Management() {
                 <h2 className="text-2xl font-bold mb-4">Danh Sách Sản Phẩm</h2>
 
                 {/* Form Nhập Thông Tin Sản Phẩm */}
-                <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
+                <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
                     <div className="mb-2">
                         <label htmlFor="name" className="block">Tên sản phẩm:</label>
                         <input

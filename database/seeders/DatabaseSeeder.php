@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Factories\AdminsFactory;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,23 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Đảm bảo các bảng phụ thuộc được chèn đúng thứ tự
         $this->call([
-            \Database\Seeders\UsersSeeder::class,
-            \Database\Seeders\AdminsSeeder::class,
-            \Database\Seeders\CategoriesSeeder::class,
-            \Database\Seeders\ProductsSeeder::class,
-            \Database\Seeders\MediasSeeder::class,
-            \Database\Seeders\Product_itemsSeeder::class,
-            \Database\Seeders\Address_stocksSeeder::class,
+            \Database\Seeders\CategoriesSeeder::class,  // Categories trước
+            \Database\Seeders\UsersSeeder::class,      // Nếu có Users
+            \Database\Seeders\AdminsSeeder::class,     // Nếu có Admins
+            \Database\Seeders\ProductsSeeder::class,   // Products sau Categories
+            \Database\Seeders\MediasSeeder::class,     // Medias trước ProductItems
+            \Database\Seeders\Product_itemsSeeder::class,  // ProductItems sau Products và Medias
+            \Database\Seeders\Address_stocksSeeder::class, // Các bảng phụ trợ khác
             \Database\Seeders\StocksSeeder::class,
             \Database\Seeders\Product_item_stocksSeeder::class,
         ]);
-
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

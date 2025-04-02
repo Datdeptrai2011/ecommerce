@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-<<<<<<< HEAD
-=======
+
     // public function welcome2(Request $request){
     //     $request->validate([
     //         'name' => 'required|string|max:255',
@@ -34,7 +33,6 @@ class AuthController extends Controller
 
     //     return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
     // }
->>>>>>> c70c8bdd5bd91e0ae0ed0c0d2211000c78b634f6
     public function welcome2(Request $request){
         try {
             $request->validate([
